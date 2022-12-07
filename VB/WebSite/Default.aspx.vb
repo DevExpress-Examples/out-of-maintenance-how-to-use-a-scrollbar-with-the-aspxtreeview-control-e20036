@@ -8,14 +8,14 @@ Imports System.Web.UI.WebControls
 Imports DevExpress.Web.ASPxTreeList
 Imports System.Data
 Imports System.Data.OleDb
-Imports DevExpress.Web.ASPxTreeView
+Imports DevExpress.Web
 Imports System.Web.Configuration
 
 Partial Public Class _Default
 	Inherits System.Web.UI.Page
 	Private myConnString As String = WebConfigurationManager.ConnectionStrings("NorthwindConnectionString").ConnectionString
 
-	Protected Sub treeView_VirtualModeCreateChildren(ByVal source As Object, ByVal e As DevExpress.Web.ASPxTreeView.TreeViewVirtualModeCreateChildrenEventArgs)
+	Protected Sub treeView_VirtualModeCreateChildren(ByVal source As Object, ByVal e As DevExpress.Web.TreeViewVirtualModeCreateChildrenEventArgs)
 		Dim nodeList As New List(Of TreeViewVirtualNode)()
 		Dim nodes As New Dictionary(Of String, String)()
 		If String.IsNullOrEmpty(e.NodeName) Then

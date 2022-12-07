@@ -7,14 +7,14 @@ using System.Web.UI.WebControls;
 using DevExpress.Web.ASPxTreeList;
 using System.Data;
 using System.Data.OleDb;
-using DevExpress.Web.ASPxTreeView;
+using DevExpress.Web;
 using System.Web.Configuration;
 
 public partial class _Default : System.Web.UI.Page
 {
     string myConnString = WebConfigurationManager.ConnectionStrings["NorthwindConnectionString"].ConnectionString;
 
-    protected void treeView_VirtualModeCreateChildren(object source, DevExpress.Web.ASPxTreeView.TreeViewVirtualModeCreateChildrenEventArgs e)
+    protected void treeView_VirtualModeCreateChildren(object source, DevExpress.Web.TreeViewVirtualModeCreateChildrenEventArgs e)
     {
         List<TreeViewVirtualNode> nodeList = new List<TreeViewVirtualNode>();
         Dictionary<string, string> nodes = new Dictionary<string, string>();
